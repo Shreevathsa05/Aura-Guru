@@ -1,1 +1,37 @@
 @import "tailwindcss";
+
+/* Apply a beautiful dark gradient with a starry effect */
+html {
+  font-size: 16px;
+  background: linear-gradient(to bottom right, #0f0f0f, #1a1a2e, #16213e);
+  color: white;
+  min-height: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Optional: Add subtle animated stars for a developer-friendly vibe */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.03;
+  animation: moveStars 60s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes moveStars {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50px, -50px);
+  }
+}
